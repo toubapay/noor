@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "1070944386226",
+    "project_id": "ocass-a1f8f",
+    "storage_bucket": "ocass-a1f8f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070944386226:android:bb1ccc22e038b842f69dab",
+        "android_client_info": {
+          "package_name": "com.marcheocass.driverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvdYO171fh2VVvGjv2591AvJXoKJ-m9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070944386226:android:2f2bf3c9c0edbc94f69dab",
+        "android_client_info": {
+          "package_name": "com.marcheocass.userapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070944386226-al25pvpipd4tta8smo8qknasf8c54b0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcheocass.userapp",
+            "certificate_hash": "28c57a7df6f5bdf0b42808e6259a65ad531a76bc"
+          }
+        },
+        {
+          "client_id": "1070944386226-qambon7st9tgrki68poushjujafhnjck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcheocass.userapp",
+            "certificate_hash": "96b010f43d44f5d2b9a67371f43bcfffde073ee5"
+          }
+        },
+        {
+          "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvdYO171fh2VVvGjv2591AvJXoKJ-m9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070944386226:android:9f062855e9d6e1e2f69dab",
+        "android_client_info": {
+          "package_name": "com.marcheocass.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070944386226-1q91u2on7397df8j33ncdm22ap6rdvi2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcheocass.vendor",
+            "certificate_hash": "96b010f43d44f5d2b9a67371f43bcfffde073ee5"
+          }
+        },
+        {
+          "client_id": "1070944386226-p4d89snmet30btdte8v2qatvlau26ea8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcheocass.vendor",
+            "certificate_hash": "1b6b78af8ea50ce47c8b17ef8cea66fbb0950f37"
+          }
+        },
+        {
+          "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvdYO171fh2VVvGjv2591AvJXoKJ-m9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070944386226:android:d30cfe3d063e352af69dab",
+        "android_client_info": {
+          "package_name": "com.toubaocass.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvdYO171fh2VVvGjv2591AvJXoKJ-m9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070944386226:android:2a4352ccd8824bf4f69dab",
+        "android_client_info": {
+          "package_name": "marcheocass.driverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvdYO171fh2VVvGjv2591AvJXoKJ-m9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070944386226-sohsu9lh68m6qa2igs02puu6p8i5s9dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
