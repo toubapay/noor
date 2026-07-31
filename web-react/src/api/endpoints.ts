@@ -81,6 +81,20 @@ export const getBrands = () => apiClient.get<Brand[]>(Endpoints.brands).then((r)
 export const getBrandItems = (brandId: number, params: Record<string, unknown> = {}) =>
   apiClient.get(Endpoints.brandItems, { params: { brand_id: brandId, ...params } }).then((r) => r.data);
 
+// There's no module-agnostic "latest items" endpoint in this API - every
+// item list is scoped by the moduleId header. Rather than switching the
+// user's actual (not-yet-chosen) module, this passes a one-off header
+// override for a single request; the interceptor in api/client.ts only
+// sets moduleId from localStorage when one exists, so this override isn't
+// clobbered while no module is selected yet.
+export const getShopLatestProducts = (moduleId: number) =>
+  apiClient
+    .get<{ items: Item[] }>(Endpoints.popularItems, {
+      params: { type: 'all', offset: 1, limit: 10 },
+      headers: { moduleId: String(moduleId) },
+    })
+    .then((r) => r.data);
+
 export const getFlashSales = () => apiClient.get<FlashSale[]>(Endpoints.flashSales).then((r) => r.data);
 export const getFlashSaleItems = (flashSaleId: number) =>
   apiClient.get<Item[]>(Endpoints.flashSaleItems, { params: { flash_sale_id: flashSaleId } }).then((r) => r.data);

@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
 import * as api from '@/api/endpoints';
 import { Loader } from '@/components/common/Loader';
 import { CategoryCard } from '@/components/common/CategoryCard';
 import { StoreCard } from '@/components/common/StoreCard';
 import { ProductCard } from '@/components/common/ProductCard';
 import { EmptyState } from '@/components/common/EmptyState';
+import { SectionHeader } from '@/components/common/SectionHeader';
 import { useAddToCart } from '@/hooks/useAddToCart';
 
 export default function HomePage() {
@@ -49,10 +49,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-base font-semibold text-gray-800">{t('popular_stores')}</h2>
-          <Link to="/stores" className="text-xs font-medium text-primary">{t('see_all')}</Link>
-        </div>
+        <SectionHeader title={t('popular_stores')} to="/stores" />
         {popularStores.isLoading ? (
           <Loader />
         ) : popularStores.data?.length ? (
@@ -67,9 +64,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-base font-semibold text-gray-800">{t('discounted_items')}</h2>
-        </div>
+        <SectionHeader title={t('discounted_items')} />
         {discountedItems.isLoading ? (
           <Loader />
         ) : discountedItems.data?.items?.length ? (
@@ -84,9 +79,7 @@ export default function HomePage() {
       </section>
 
       <section>
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-base font-semibold text-gray-800">{t('latest_items')}</h2>
-        </div>
+        <SectionHeader title={t('latest_items')} />
         {latestItems.isLoading ? (
           <Loader />
         ) : latestItems.data?.items?.length ? (
