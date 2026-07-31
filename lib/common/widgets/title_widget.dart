@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:sixam_mart/features/language/controllers/language_controller.dart';
 import 'package:sixam_mart/helper/responsive_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
 import 'package:sixam_mart/util/styles.dart';
@@ -14,8 +13,6 @@ class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final bool ltr = Get.find<LocalizationController>().isLtr;
-
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Row(children: [
         Text(title, style: robotoBold.copyWith(fontSize: ResponsiveHelper.isDesktop(context) ? Dimensions.fontSizeLarge : Dimensions.fontSizeLarge)),
@@ -26,14 +23,20 @@ class TitleWidget extends StatelessWidget {
       ),
       (onTap != null) ? InkWell(
         onTap: onTap as void Function()?,
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(ltr ? 10 : 0, 5, ltr ? 0 : 10, 5),
-          child: Text(
-            'see_all'.tr,
-            style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge!.color!.withValues(alpha: 0.5),
-              decoration: TextDecoration.underline, decorationColor: Theme.of(context).textTheme.bodyLarge!.color!.withValues(alpha: 0.5), decorationThickness: 1.5,
-            ),
+        borderRadius: BorderRadius.circular(Dimensions.radiusPill),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(Dimensions.paddingSizeSmall, 4, Dimensions.paddingSizeExtraSmall, 4),
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor.withValues(alpha: 0.08),
+            borderRadius: BorderRadius.circular(Dimensions.radiusPill),
           ),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            Text(
+              'see_all'.tr,
+              style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
+            ),
+            Icon(Icons.chevron_right, size: 18, color: Theme.of(context).primaryColor),
+          ]),
         ),
       ) : const SizedBox(),
     ]);

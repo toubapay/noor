@@ -10,7 +10,6 @@ import 'package:sixam_mart/features/location/domain/models/zone_response_model.d
 import 'package:sixam_mart/helper/address_helper.dart';
 import 'package:sixam_mart/helper/route_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
 import 'package:sixam_mart/common/widgets/custom_image.dart';
 import 'package:sixam_mart/common/widgets/custom_snackbar.dart';
 import 'package:sixam_mart/features/store/screens/store_screen.dart';
@@ -90,12 +89,12 @@ class BannerView extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
-                        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 0)],
+                        borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
+                        boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 12, spreadRadius: 1, offset: const Offset(0, 4))],
                       ),
                       margin: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeExtraSmall),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
+                        borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
                         child: GetBuilder<SplashController>(builder: (splashController) {
                           return CustomImage(
                             image: '${bannerList[index]}',
@@ -109,19 +108,22 @@ class BannerView extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: Dimensions.paddingSizeExtraSmall),
+            const SizedBox(height: Dimensions.paddingSizeSmall),
 
             Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall, vertical: 1),
-                child: Text('${(bannerController.currentIndex) + 1}/${bannerList.length}',
-                    style: robotoBold.copyWith(color: Theme.of(context).primaryColor, fontSize: 12),
-                ),
-              ),
+              child: Row(mainAxisSize: MainAxisSize.min, children: List.generate(bannerList.length, (index) {
+                final bool isActive = index == bannerController.currentIndex;
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 250),
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
+                  height: 6,
+                  width: isActive ? 18 : 6,
+                  decoration: BoxDecoration(
+                    color: isActive ? Theme.of(context).primaryColor : Theme.of(context).primaryColor.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(Dimensions.radiusPill),
+                  ),
+                );
+              })),
             ),
 
           ],

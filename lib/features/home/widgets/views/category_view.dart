@@ -58,11 +58,18 @@ class CategoryView extends StatelessWidget {
                                 SizedBox(
                                   height: 75, width: 75,
                                   child: Stack(children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                                      child: CustomImage(
-                                        image: '${categoryController.categoryList![index].imageFullUrl}',
-                                        height: 75, width: 75, fit: BoxFit.cover,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
+                                        border: Border.all(color: Theme.of(context).primaryColor.withValues(alpha: 0.12)),
+                                        boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 8, offset: const Offset(0, 2))],
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
+                                        child: CustomImage(
+                                          image: '${categoryController.categoryList![index].imageFullUrl}',
+                                          height: 75, width: 75, fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
 
@@ -194,11 +201,18 @@ class PharmacyCategoryView extends StatelessWidget {
                     Stack(
                       children: [
 
-                        ClipRRect(
-                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(100), topRight: Radius.circular(100)),
-                          child: CustomImage(
-                            image: '${categoryController.categoryList![index].imageFullUrl}',
-                            height: 60, width: double.infinity, fit: BoxFit.cover,
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(100), topRight: Radius.circular(100)),
+                            border: Border.all(color: Theme.of(context).primaryColor.withValues(alpha: 0.12)),
+                            boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 8, offset: const Offset(0, 2))],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(100), topRight: Radius.circular(100)),
+                            child: CustomImage(
+                              image: '${categoryController.categoryList![index].imageFullUrl}',
+                              height: 60, width: double.infinity, fit: BoxFit.cover,
+                            ),
                           ),
                         ),
 
@@ -285,11 +299,17 @@ class FoodCategoryView extends StatelessWidget {
 
                       Stack(
                         children: [
-                          ClipRRect(
-                            borderRadius: const BorderRadius.all(Radius.circular(100)),
-                            child: CustomImage(
-                              image: '${categoryController.categoryList![index].imageFullUrl}',
-                              height: 60, width: double.infinity, fit: BoxFit.cover,
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Theme.of(context).primaryColor.withValues(alpha: 0.12)),
+                              boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 8, offset: const Offset(0, 2))],
+                            ),
+                            child: ClipOval(
+                              child: CustomImage(
+                                image: '${categoryController.categoryList![index].imageFullUrl}',
+                                height: 60, width: 60, fit: BoxFit.cover,
+                              ),
                             ),
                           ),
 

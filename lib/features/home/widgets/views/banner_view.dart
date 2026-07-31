@@ -8,7 +8,6 @@ import 'package:sixam_mart/common/models/module_model.dart';
 import 'package:sixam_mart/features/store/domain/models/store_model.dart';
 import 'package:sixam_mart/helper/route_helper.dart';
 import 'package:sixam_mart/util/dimensions.dart';
-import 'package:sixam_mart/util/styles.dart';
 import 'package:sixam_mart/common/widgets/custom_image.dart';
 import 'package:sixam_mart/common/widgets/custom_snackbar.dart';
 import 'package:sixam_mart/features/store/screens/store_screen.dart';
@@ -85,7 +84,7 @@ class BannerView extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
-                        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)],
+                        boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 12, spreadRadius: 1, offset: const Offset(0, 4))],
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
@@ -102,25 +101,23 @@ class BannerView extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: Dimensions.paddingSizeExtraSmall),
+            const SizedBox(height: Dimensions.paddingSizeSmall),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: bannerController.bannerImageList!.map((bnr) {
-                int index = bannerController.bannerImageList!.indexOf(bnr);
-                int totalBanner = bannerController.bannerImageList!.length;
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 3),
-                  child: index == bannerController.currentIndex ? Container(
-                    decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(Dimensions.radiusDefault)),
-                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                    child: Text('${(index) + 1}/$totalBanner', style: robotoRegular.copyWith(color: Theme.of(context).cardColor, fontSize: 12)),
-                  ) : Container(
-                    height: 5, width: 6,
-                    decoration: BoxDecoration(color: Theme.of(context).primaryColor.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(Dimensions.radiusDefault)),
+              children: List.generate(bannerController.bannerImageList!.length, (index) {
+                final bool isActive = index == bannerController.currentIndex;
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 250),
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
+                  height: 6,
+                  width: isActive ? 18 : 6,
+                  decoration: BoxDecoration(
+                    color: isActive ? Theme.of(context).primaryColor : Theme.of(context).primaryColor.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(Dimensions.radiusPill),
                   ),
                 );
-              }).toList(),
+              }),
             ),
           ],
         ) : Shimmer(
