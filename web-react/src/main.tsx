@@ -17,11 +17,15 @@ const queryClient = new QueryClient({
 
 const rootEl = document.getElementById('root')!;
 
+// Matches Vite's `base` config so routing works whether the app is deployed
+// at the domain root or a subfolder (e.g. GoDaddy's /noor/).
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/';
+
 createRoot(rootEl).render(
   <StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <App />
           <Toaster position="top-center" />
         </BrowserRouter>
