@@ -21,6 +21,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sixam_mart/features/home/widgets/banner_view.dart';
 import 'package:sixam_mart/features/home/widgets/popular_store_view.dart';
+import 'package:sixam_mart/features/home/widgets/shop_latest_products_view.dart';
 
 class ModuleView extends StatelessWidget {
   final SplashController splashController;
@@ -165,6 +166,8 @@ class ModuleView extends StatelessWidget {
                 ],
               ) : const SizedBox();
             }),
+
+            const ShopLatestProductsView(),
 
             GetBuilder<AddressController>(builder: (locationController) {
               List<AddressModel?> addressList = [];
