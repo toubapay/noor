@@ -276,7 +276,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 0,
                     automaticallyImplyLeading: false,
                     surfaceTintColor: Theme.of(context).colorScheme.surface,
-                    backgroundColor: ResponsiveHelper.isDesktop(context) ? Colors.transparent : Theme.of(context).colorScheme.surface,
+                    backgroundColor: ResponsiveHelper.isDesktop(context) ? Colors.transparent
+                        : showMobileModule ? Theme.of(context).primaryColor : Theme.of(context).colorScheme.surface,
                     title: Center(child: Container(
                       width: Dimensions.webMaxWidth, height: Get.find<LocalizationController>().isLtr ? 60 : 70, color: Theme.of(context).colorScheme.surface,
                       child: Row(children: [
